@@ -65,7 +65,7 @@ body {
 
 
 /* =========================
-   LOGO
+   LOGO (NEON MOR + DAKTİLO)
 ========================= */
 
 .logo-area {
@@ -78,13 +78,70 @@ body {
 
 
 .logo {
-    font-size: 15px;
+    font-size: 16px;
 
-    font-weight: 500;
+    font-weight: 700;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
 
-    color: #eeeeee;
+    min-height: 24px;
+
+    /* NEON MOR GRADIENT RENK EFEKTİ */
+    background: linear-gradient(135deg, #b026ff, #d946ef, #8b5cf6, #ec4899, #b026ff);
+
+    background-size: 300% 300%;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientShift 4s ease infinite;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    /* NEON PARLAMA EFEKTİ (GLOW) */
+    filter: drop-shadow(0 0 8px rgba(176, 38, 255, 0.6));
+}
+
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Neon Mor Daktilo İmleci */
+.cursor {
+    font-weight: 300;
+
+    color: #d946ef;
+
+    -webkit-text-fill-color: #d946ef;
+
+    margin-left: 2px;
+
+    text-shadow: 0 0 8px rgba(217, 70, 239, 0.8);
+
+    animation: blink 0.8s infinite;
+}
+
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 
@@ -141,36 +198,6 @@ body {
     color: #ffffff;
 
     transform: translateY(-2px);
-}
-
-
-
-/* =========================
-   NAVIGATION LINKS
-========================= */
-
-.nav-links {
-    display: flex;
-
-    gap: 30px;
-
-    padding-top: 2px;
-}
-
-
-.nav-links a {
-    color: #eeeeee;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition: opacity 0.3s ease;
-}
-
-
-.nav-links a:hover {
-    opacity: 0.55;
 }
 
 
@@ -275,6 +302,14 @@ body {
     padding-left: 20px;
 
     margin-top: 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 25px;
+
+    align-items: start;
 }
 
 
@@ -296,6 +331,45 @@ body {
     color: #777777 !important;
 
     font-size: 14px !important;
+}
+
+
+.education-details {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.education-details li {
+    color: #bbbbbb;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    position: relative;
+
+    padding-left: 16px;
+}
+
+
+.education-details li::before {
+    content: "•";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #e3d5ff;
 }
 
 
@@ -444,13 +518,6 @@ footer {
     }
 
 
-    .nav-links {
-        gap: 18px;
-
-        flex-wrap: wrap;
-    }
-
-
     .section {
         padding: 145px 0 35px;
     }
@@ -475,6 +542,13 @@ footer {
 
     #about .section-body p {
         text-align: left;
+    }
+
+
+    .education-card {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
     }
 
 
